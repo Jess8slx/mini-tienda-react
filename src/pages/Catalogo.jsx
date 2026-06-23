@@ -3,10 +3,9 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase'
 import { useNavigate } from 'react-router-dom'
 
-export default function Catalogo() {
+export default function Catalogo({ carrito, setCarrito }) {
     const [productos, setProductos] = useState([])
     const [cantidades, setCantidades] = useState({})
-    const [carrito, setCarrito] = useState([])
     const navigate = useNavigate()
 
     // Si no hay sesión, regresar al login
